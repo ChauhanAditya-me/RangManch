@@ -70,9 +70,10 @@ nav img {
     cursor: pointer;
 }
 .first-btn:hover {
+    color: white;
     border: 1px solid red;
     background: red;
-    transition: 1s;
+    transition: 0.5s;
 }
 nav .fa {
     display: none;
@@ -135,10 +136,13 @@ nav .fa {
 
 .footer {
     background-color: #292929;
-    color: rgb(204, 204, 204);
-    padding: 10px 0;
     width: 100%;
     text-align: center;
+    color:#777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
 }
 .footer h3 {
     margin-bottom: 25px;
@@ -147,62 +151,8 @@ nav .fa {
 }
 .icons .fa {
     font-size: 20px;
-    color: #263ea6;
+    color: #ffffff;
     margin: 0 13px;
     cursor: pointer;
     padding: 18px 0;
-}
-.fa-heart-o {
-    color: red;
-}
-
-
-
-                                    /* Mobile Version */
-
-@media (max-width: 768px)  {
-    #header-img {
-        margin-top: 20px;
-        width: 90px;
-    }
-    #header-name {
-        margin-top: 150px;
-    }
-    html {
-        overflow-x: hidden;
-    }
-    body {
-        overflow-x: hidden;
-    }
-    .row {
-        display: block;
-    }
-    .nav-links ul li {
-        display: block;
-    }
-    .nav-links {
-        position: fixed;
-        background: #263ea6;
-        height: 100vh;
-        width: 200px;
-        top: 0;
-        right: -200px;
-        text-align: left;
-        z-index: 2;
-        transition: 1s;
-    }
-    nav .fa {
-        display: block;
-        color: white;
-        margin: 10px;
-        font-size: 22px;
-        cursor: pointer;
-    }
-    .nav-links ul {
-        padding: 30px
-    }
-    #mail-id {
-        font-size: 16px;
-    }
-
 }
