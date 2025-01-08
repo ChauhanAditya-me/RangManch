@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -63,7 +64,8 @@ nav img {
     left: 50%;
     transform: translate(-50%, -59%);
     text-align: center;
-    pointer-events: none;
+    /* pointer-events: none; */
+    z-index: 1;
 }
 .text-box h1 {
     font-size: 60px;
@@ -88,8 +90,9 @@ nav img {
     cursor: pointer;
 }
 .first-btn:hover {
-    border: 1px solid red;
-    background: red;
+    color: black;
+    border: 1px solid rgb(200, 255, 0);
+    background: rgb(200, 255, 0);
     transition: 1s;
 }
 nav .fa {
@@ -132,7 +135,6 @@ nav .fa {
         transform: translateX(-10px);
     }
 }
-
 
 
 /* PopUp CSS */
