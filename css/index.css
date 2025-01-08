@@ -128,8 +128,12 @@ nav .fa {
 
 
 /* PopUp CSS */
+
 .popup-screen {
     display: none !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+    position: initial !important;
 }
 
 /* .popup-screen {
