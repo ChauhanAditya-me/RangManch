@@ -104,7 +104,7 @@ nav .fa {
     top: 50px;
     font-size: 40px;
     color: transparent;
-    -webkit-text-stroke: 1px yellow;
+    -webkit-text-stroke: 1px rgb(0, 234, 255);
     background: url(../img/back.png);
     -webkit-background-clip: text;
     background-position: 0 0;
