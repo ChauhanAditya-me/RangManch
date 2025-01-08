@@ -11,3 +11,7 @@ function hideMenu() {
 
 navLinks.style.right = "0"; 
 
+window.onload = () => {
+    navLinks.style.right = "-200px";
+    navLinks.classList.add("visible");
+};
