@@ -46,7 +46,7 @@ nav img {
     width: 0%;
     height: 2px;
     display: block;
-    background: #f44336;
+    background: #9ef436;
     margin: auto;
     transition: 0.5s;
 }
@@ -65,6 +65,12 @@ h1 {
     font-size: 36px;
     font-weight: 600;
 }
+h3 {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
 p {
     color:#777;
     font-size: 14px;
@@ -79,7 +85,7 @@ p {
 }
 
 
-/* New Projects Part CSS */
+/*-- Projects CSS --*/
 html{
     box-sizing: border-box;
     font-size: 61.5%;
@@ -110,7 +116,7 @@ html{
 }
 .grid-items:hover {
     transform: translateY(-0.5%);
-    box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.184);
 }
 .card-img {
     display: block;
@@ -138,71 +144,21 @@ html{
 /* Footer */
 
 .footer {
-    background-color: #eee;
+    background-color: #292929;
+    color: white;
+    padding: 10px 0;
     width: 100%;
     text-align: center;
-    padding: 30px 0;
 }
 .footer h3 {
+    font-weight: 600;
     margin-bottom: 25px;
     margin-top: 20px;
-    font-size: 23px;
-    font-weight: 600;
 }
 .icons .fa {
+    color: #acacac;
+    padding: 18px 0;
     font-size: 20px;
-    color: #263ea6;
     margin: 0 13px;
     cursor: pointer;
-    padding: 18px 0;
-}
-.fa-heart-o {
-    color: red;
-}
-
-
-
-                                    /* Mobile Version */
-
-@media (max-width: 768px)  {
-    #header-img {
-        margin-top: 20px;
-        width: 90px;
-    }
-    #header-name {
-        margin-top: 150px;
-    }
-    .nav-links ul li {
-        display: block;
-    }
-    .nav-links {
-        position: fixed;
-        background: #263ea6;
-        height: 100vh;
-        width: 200px;
-        top: 0;
-        right: -200px;
-        text-align: left;
-        z-index: 2;
-        transition: 1s;
-    }
-    nav .fa {
-        display: block;
-        color: white;
-        margin: 10px;
-        font-size: 22px;
-        cursor: pointer;
-    }
-    .nav-links ul {
-        padding: 30px
-    }
-    .faculty img {
-        width: 35%;
-    }
-    .row {
-        flex-direction: column;
-    }
-    .sec-grid {
-        padding: 30px;
-    }
 }
