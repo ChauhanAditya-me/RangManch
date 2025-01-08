@@ -128,6 +128,9 @@ nav .fa {
 
 
 /* PopUp CSS */
+.popup-screen {
+    display: none !important;
+}
 
 /* .popup-screen {
     z-index: 999999;
