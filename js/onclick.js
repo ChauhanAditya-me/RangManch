@@ -8,6 +8,9 @@ function hideMenu() {
     navLinks.style.right = "-200px";
 }
 
+// For desktop, ensure `navLinks` is not set to an incorrect position.
+navLinks.style.right = "0"; // Add this to ensure it’s visible on desktop.
+
 
 // Popup JS
 
