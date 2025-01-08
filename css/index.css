@@ -449,7 +449,8 @@ h3 {
         top: 0;
         right: -200px;
         text-align: left;
-        z-index: 2;
+        z-index: 1000;
+        position: relative;
         transition: 1s;
     }
     nav .fa {
