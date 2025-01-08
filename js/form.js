@@ -1,14 +1,14 @@
 function sendEmail() {
-    var name = $("#Name").val();            //JS for SMTP (Don't Change send method)
+    var name = $("#Name").val();            
     var email = $("#Email").val();
     var msg = $("#Message").val();
 
     var body = "Name : " + name + "    " + "Email :" + email +  "    " +"Message : " + msg;
 
 
-    emailjs.send("service_ygycc19","template_21ttgmp",{
-      from_name: "ANARC Website",
-      to_name: "ANARC",
+    email.send("service_ygycc191","template_21ttgmp1",{
+      from_name: "Rangmanch Website",
+      to_name: "Rangmanch",
       message: body,
       }).then(
       message => {
