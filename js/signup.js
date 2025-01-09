@@ -1,4 +1,3 @@
-// signup.js
 
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('.signup-form');
@@ -42,9 +41,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // If form is valid, submit
         if (isValid) {
-            // Proceed with actual form submission (e.g., AJAX or regular form submission)
             alert('Form submitted successfully!');
-            form.reset();  // Reset the form fields
+            form.reset();
         }
     });
 
@@ -54,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return regex.test(email);
     }
 
-    // Show error message
+    // Error message
     function showError(input, message) {
         const parent = input.parentElement;
         const error = parent.querySelector('.error-message');
