@@ -9,10 +9,10 @@ function validateLogin() {
 
     if (username === "admin" && password === "password123") {
         alert("Login successful!");
-        window.location.href = "index.html"; // Redirect to homepage
+        window.location.href = "index.html"; 
     } else {
         alert("Invalid username or password!");
     }
 
-    return false; // Prevent form submission for this example
+    return false;
 }

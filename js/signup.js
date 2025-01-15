@@ -6,13 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const password = document.getElementById('password');
     const signupBtn = document.querySelector('.signup-btn');
 
-    // Validation on form submit
     form.addEventListener('submit', function (e) {
         e.preventDefault();
 
         let isValid = true;
 
-        // Check if username is empty
+        // empty username
         if (username.value.trim() === '') {
             showError(username, 'Username is required');
             isValid = false;
@@ -20,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
             clearError(username);
         }
 
-        // Check if email is empty or invalid
+        // empty email
         if (email.value.trim() === '') {
             showError(email, 'Email is required');
             isValid = false;
@@ -31,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
             clearError(email);
         }
 
-        // Check if password is empty
+        // empty password
         if (password.value.trim() === '') {
             showError(password, 'Password is required');
             isValid = false;
@@ -39,20 +38,17 @@ document.addEventListener('DOMContentLoaded', function () {
             clearError(password);
         }
 
-        // If form is valid, submit
         if (isValid) {
             alert('Form submitted successfully!');
             form.reset();
         }
     });
 
-    // Email validation regex
     function validateEmail(email) {
         const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         return regex.test(email);
     }
 
-    // Error message
     function showError(input, message) {
         const parent = input.parentElement;
         const error = parent.querySelector('.error-message');
@@ -65,7 +61,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Clear error message
     function clearError(input) {
         const parent = input.parentElement;
         const error = parent.querySelector('.error-message');
