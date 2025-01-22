@@ -9,7 +9,7 @@
 .header {
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.7),rgba(4,9,30,0.1)),url(../img/robot-2301646.jpg);
+    background-image: linear-gradient(rgb(4, 9, 30),rgba(4, 9, 30, 0.314)),url(../img/robot-2301646.jpg);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -370,3 +370,41 @@ h3 {
     cursor: pointer;
 }
 
+/* JQuery */
+
+.fade-in {
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-col img {
+    transition: transform 0.3s ease;
+}
+
+.activity-column {
+    transition: transform 0.3s ease;
+}
+
+.nav-links ul li a {
+    transition: padding-bottom 0.2s ease;
+}
+
+/* Hover Effects */
+.project-col:hover img {
+    transform: scale(1.05);
+}
+
+.activity-column:hover {
+    transform: translateY(-10px);
+}
