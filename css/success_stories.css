@@ -32,6 +32,27 @@
     margin-bottom: 10px;
 }
 
+.story-actions {
+    float: right;
+    margin-bottom: 10px;
+}
+
+.email-story, .delete-story {
+    color: #f44336;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+.email-story:hover, .delete-story:hover {
+    transform: scale(1.1);
+}
+
+.email-story {
+    color: #4CAF50;
+}
+
 nav {
     display: flex;
     padding: 2% 6%;
@@ -96,7 +117,6 @@ nav img {
     margin-bottom: 20px;
 }
 
-/* Add after existing CSS */
 .stories-list {
     max-width: 800px;
     margin: 50px auto;

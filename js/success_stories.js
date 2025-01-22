@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    // Initialize
     displayStories();
 
     // Form submission
@@ -31,7 +30,7 @@ $(document).ready(function() {
         displayStories();
     });
 
-    // Email button click
+    // Popup handlers
     $('#emailBtn').click(function() {
         $('#emailPopup').fadeIn();
         setTimeout(function() {
@@ -39,12 +38,10 @@ $(document).ready(function() {
         }, 2000);
     });
 
-    // Close popup on click
     $('.close-popup').click(function() {
         $('#emailPopup').fadeOut();
     });
 
-    // Close popup when clicking outside
     $(window).click(function(e) {
         if ($(e.target).is('.popup')) {
             $('#emailPopup').fadeOut();
@@ -55,18 +52,20 @@ $(document).ready(function() {
     function displayStories() {
         let stories = JSON.parse(localStorage.getItem('stories') || '[]');
         const container = $('#storiesContainer');
-
+    
         if (stories.length === 0) {
             container.html('<p>No stories shared yet.</p>');
             return;
         }
-
-        // Sort by newest first
+    
         stories.sort((a, b) => b.id - a.id);
-
+    
         const storiesHTML = stories.map(story => `
             <div class="story-item" data-id="${story.id}">
-                <i class="fa fa-times delete-story"></i>
+                <div class="story-actions">
+                    <i class="fa fa-envelope email-story" title="Email this story"></i>
+                    <i class="fa fa-trash delete-story" title="Delete story"></i>
+                </div>
                 <h3>${story.title}</h3>
                 <div class="story-meta">
                     <span>By: ${story.author}</span>
@@ -77,16 +76,30 @@ $(document).ready(function() {
                 </div>
             </div>
         `).join('');
-
+    
         container.html(storiesHTML);
-
+    
         // Delete story handler
         $('.delete-story').click(function() {
-            const id = parseInt($(this).parent().data('id'));
+            const id = parseInt($(this).closest('.story-item').data('id'));
             let stories = JSON.parse(localStorage.getItem('stories') || '[]');
             stories = stories.filter(story => story.id !== id);
             localStorage.setItem('stories', JSON.stringify(stories));
             displayStories();
+        });
+    
+        // Email story handler
+        $('.email-story').click(function() {
+            const id = parseInt($(this).closest('.story-item').data('id'));
+            const stories = JSON.parse(localStorage.getItem('stories') || '[]');
+            const story = stories.find(s => s.id === id);
+    
+            if (story) {
+                $('#emailPopup').fadeIn();
+                setTimeout(() => {
+                    $('#emailPopup').fadeOut();
+                }, 2000);
+            }
         });
     }
 });
