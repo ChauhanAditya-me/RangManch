@@ -1,121 +1,92 @@
 $(document).ready(function() {
-    // Initialize stories array from localStorage
-    let stories = JSON.parse(localStorage.getItem('stories')) || [];
-    
-    // Display existing stories
+    // Initialize
     displayStories();
 
-    // Handle form submission
+    // Form submission
     $('#storyForm').on('submit', function(e) {
         e.preventDefault();
         
+        const title = $('#storyTitle').val().trim();
+        const author = $('#authorName').val().trim();
+        const content = $('#storyContent').val().trim();
+
+        if (!title || !author || !content) {
+            alert('Please fill all fields');
+            return;
+        }
+
         const story = {
             id: Date.now(),
-            title: $('#storyTitle').val(),
-            author: $('#authorName').val(),
-            content: $('#storyContent').val(),
+            title: title,
+            author: author,
+            content: content,
             date: new Date().toLocaleDateString()
         };
 
-        // Add story to array
+        let stories = JSON.parse(localStorage.getItem('stories') || '[]');
         stories.push(story);
-        
-        // Save to localStorage
         localStorage.setItem('stories', JSON.stringify(stories));
-        
-        // Reset form and display stories
+
         this.reset();
         displayStories();
     });
 
-    // Display stories function
-    function displayStories() {
-        const storiesHTML = stories.map(story => `
-            <div class="story-card">
-                <h3>${story.title}</h3>
-                <p class="author">By: ${story.author}</p>
-                <p class="date">${story.date}</p>
-                <p class="content">${story.content}</p>
-            </div>
-        `).join('');
-        
-        $('#storiesList').html(storiesHTML);
-    }
-
-    // Email all stories
-    $('#emailAllBtn').click(function() {
-        const emailBody = stories.map(story => `
-            Story: ${story.title}
-            Author: ${story.author}
-            Date: ${story.date}
-            
-            ${story.content}
-            
-            ----------------------
-        `).join('\n');
-
-        const mailtoLink = `mailto:?subject=RangManch Stories&body=${encodeURIComponent(emailBody)}`;
-        window.location.href = mailtoLink;
+    // Email button click
+    $('#emailBtn').click(function() {
+        $('#emailPopup').fadeIn();
+        setTimeout(function() {
+            $('#emailPopup').fadeOut();
+        }, 2000);
     });
 
-    $(document).ready(function() {
-        displayStories();
-    
-        $('#storyForm').on('submit', function(e) {
-            e.preventDefault();
-            
-            const story = {
-                id: Date.now(),
-                title: $('#storyTitle').val(),
-                author: $('#authorName').val(),
-                content: $('#storyContent').val(),
-                date: new Date().toLocaleDateString()
-            };
-    
-            let stories = JSON.parse(localStorage.getItem('stories') || '[]');
-            stories.push(story);
-            localStorage.setItem('stories', JSON.stringify(stories));
-    
-            displayStories();
-            this.reset();
-        });
-    
-        function displayStories() {
-            const stories = JSON.parse(localStorage.getItem('stories') || '[]');
-            const container = $('#storiesContainer');
-            
-            if (stories.length === 0) {
-                container.html('<p class="no-stories">No stories shared yet.</p>');
-                return;
-            }
-    
-            const storiesHTML = stories.map(story => `
-                <div class="story-item" data-id="${story.id}">
-                    <i class="fa fa-times delete-story"></i>
-                    <h3>${story.title}</h3>
-                    <div class="story-meta">
-                        <span>By: ${story.author}</span>
-                        <span>Posted: ${story.date}</span>
-                    </div>
-                    <div class="story-content">
-                        ${story.content}
-                    </div>
-                </div>
-            `).join('');
-    
-            container.html(storiesHTML);
-    
-            $('.delete-story').click(function() {
-                const id = $(this).parent().data('id');
-                deleteStory(id);
-            });
+    // Close popup on click
+    $('.close-popup').click(function() {
+        $('#emailPopup').fadeOut();
+    });
+
+    // Close popup when clicking outside
+    $(window).click(function(e) {
+        if ($(e.target).is('.popup')) {
+            $('#emailPopup').fadeOut();
         }
-    
-        function deleteStory(id) {
+    });
+
+    // Display stories function
+    function displayStories() {
+        let stories = JSON.parse(localStorage.getItem('stories') || '[]');
+        const container = $('#storiesContainer');
+
+        if (stories.length === 0) {
+            container.html('<p>No stories shared yet.</p>');
+            return;
+        }
+
+        // Sort by newest first
+        stories.sort((a, b) => b.id - a.id);
+
+        const storiesHTML = stories.map(story => `
+            <div class="story-item" data-id="${story.id}">
+                <i class="fa fa-times delete-story"></i>
+                <h3>${story.title}</h3>
+                <div class="story-meta">
+                    <span>By: ${story.author}</span>
+                    <span>Posted: ${story.date}</span>
+                </div>
+                <div class="story-content">
+                    ${story.content}
+                </div>
+            </div>
+        `).join('');
+
+        container.html(storiesHTML);
+
+        // Delete story handler
+        $('.delete-story').click(function() {
+            const id = parseInt($(this).parent().data('id'));
             let stories = JSON.parse(localStorage.getItem('stories') || '[]');
             stories = stories.filter(story => story.id !== id);
             localStorage.setItem('stories', JSON.stringify(stories));
             displayStories();
-        }
-    });
+        });
+    }
 });
