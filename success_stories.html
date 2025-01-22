@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Stories - RangManch</title>
+
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/success_stories.css">
+    
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/success_stories.js"></script>
+</head>
+<body>
+    <section class="about-header">
+        <nav>
+            <a href="index.html"> <img src="img/logo.png" alt="" id="header-img"></a>
+            <div class="nav-links" id="navLinks">
+                
+                <ul>
+                    <li><a href="members.html">Team</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="success_stories.html">Success Stories</a></li>
+                </ul>
+            </div>
+            
+        </nav>
+        <h1>Success Stories</h1>
+    </section>
+
+    <form id="storyForm" class="story-form">
+        <div class="form-group">
+            <input type="text" id="storyTitle" placeholder="Story Title" required>
+        </div>
+        <div class="form-group">
+            <input type="text" id="authorName" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+            <input type="email" id="emailList" placeholder="Recipient Emails (comma separated)" required>
+        </div>
+        <div class="form-group">
+            <textarea id="storyContent" rows="6" placeholder="Your Story" required></textarea>
+        </div>
+        <div class="button-group">
+            <button type="submit" class="hero-btn">Submit Story</button>
+            <button type="button" id="emailBtn" class="hero-btn">Send Email</button>
+        </div>
+
+        <div class="stories-list">
+            <h2>Recent Stories</h2>
+            <div id="storiesContainer"></div>
+        </div>
+    </form>
+
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>The official Film Making club of Vishwakarma Institute Of Technology</p>
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-linkedin"></i>
+            <i class="fa fa-youtube"></i>
+        </div>
+    </section>
+</body>
+</html>
