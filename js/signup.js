@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let isValid = true;
 
-        // empty username
+        //--------------------empty username-------------------
         if (username.value.trim() === '') {
             showError(username, 'Username is required');
             isValid = false;
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
             clearError(username);
         }
 
-        // empty email
+        //--------------------empty email-----------------------------
         if (email.value.trim() === '') {
             showError(email, 'Email is required');
             isValid = false;
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
             clearError(email);
         }
 
-        // empty password
+        //----------------------empty password----------------------------
         if (password.value.trim() === '') {
             showError(password, 'Password is required');
             isValid = false;

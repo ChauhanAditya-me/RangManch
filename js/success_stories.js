@@ -1,7 +1,6 @@
 $(document).ready(function() {
     displayStories();
 
-    // Form submission
     $('#storyForm').on('submit', function(e) {
         e.preventDefault();
         
@@ -30,7 +29,7 @@ $(document).ready(function() {
         displayStories();
     });
 
-    // Popup handlers
+    //---------------------Success Popup-------------------
     $('#emailBtn').click(function() {
         $('#emailPopup').fadeIn();
         setTimeout(function() {
@@ -48,7 +47,6 @@ $(document).ready(function() {
         }
     });
 
-    // Display stories function
     function displayStories() {
         let stories = JSON.parse(localStorage.getItem('stories') || '[]');
         const container = $('#storiesContainer');
@@ -79,7 +77,7 @@ $(document).ready(function() {
     
         container.html(storiesHTML);
     
-        // Delete story handler
+        //--------------------------------Delete story-------------------------------
         $('.delete-story').click(function() {
             const id = parseInt($(this).closest('.story-item').data('id'));
             let stories = JSON.parse(localStorage.getItem('stories') || '[]');
@@ -88,7 +86,7 @@ $(document).ready(function() {
             displayStories();
         });
     
-        // Email story handler
+        //---------------------------------Email story------------------------------------------
         $('.email-story').click(function() {
             const id = parseInt($(this).closest('.story-item').data('id'));
             const stories = JSON.parse(localStorage.getItem('stories') || '[]');

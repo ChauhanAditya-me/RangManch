@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    // Scroll animations
+    //-----------------------Scroll animation-----------------------------
     $(window).scroll(function() {
         $('.project, .events, .team-highlights').each(function() {
             const elementTop = $(this).offset().top;
@@ -13,7 +13,7 @@ $(document).ready(function() {
         });
     });
 
-    // Navigation hover effects
+    //-------------------------------Navigation hover------------------------------
     $('.nav-links ul li').hover(
         function() {
             $(this).find('a').stop().animate({
@@ -27,7 +27,7 @@ $(document).ready(function() {
         }
     );
 
-    // Project image hover effects
+    //--------------------------------image hover-----------------------------------
     $('.project-col').hover(
         function() {
             $(this).find('img').stop().animate({
@@ -41,7 +41,7 @@ $(document).ready(function() {
         }
     );
 
-    // Parallax scrolling effect
+    //---------------------------------Parallax scrolling-------------------------------
     $(window).scroll(function() {
         let scroll = $(window).scrollTop();
         $('.header').css({
@@ -49,7 +49,7 @@ $(document).ready(function() {
         });
     });
 
-    // Smooth scrolling
+    //--------------------------------Smooth scroll----------------------------------
     $('a[href*="#"]').on('click', function(e) {
         e.preventDefault();
         $('html, body').animate({
@@ -57,7 +57,7 @@ $(document).ready(function() {
         }, 800);
     });
 
-    // Activity column animations
+    //-----------------------------Activity column animations--------------------------------------
     $('.activity-column').hover(
         function() {
             $(this).stop().animate({
