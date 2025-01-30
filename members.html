@@ -16,6 +16,7 @@
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/login.js"></script>
     
 </head>
 <body>
@@ -30,7 +31,20 @@
                     <li><a href="events.html">Events</a></li>
                     <li><a href="success_stories.html">Success Stories</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="login.html" class="login-btn">Login</a></li>
+                    <li>
+                        <div id="loginButtonContainer">
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    const container = document.getElementById('loginButtonContainer');
+                                    if (checkLoginStatus()) {
+                                        container.innerHTML = '<a class="btn btn-danger ms-2" href="#" onclick="logout()">Logout</a>';
+                                    } else {
+                                        container.innerHTML = '<a class="login-btn" href="login.html">Login</a>';
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </li>
                 </ul>
             </div>
             <i class="fa fa-bars" onclick="showMenu()"></i>
