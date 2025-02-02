@@ -6,6 +6,7 @@
 
 /* Header Section */
 .about-header {
+    padding-top: 80px;
     height: 50vh;
     width: 100%;
     background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(../img/team-bg.jpg);
@@ -58,9 +59,6 @@ nav {
     justify-content: space-between; 
     align-items: center;
     padding: 10px 20px;
-}
-nav img {
-    width: 150px;
 }
 .nav-links {
     display: flex; 

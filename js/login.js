@@ -8,6 +8,8 @@ function validateLogin() {
     }
 
     if (username === "admin" && password === "password123") {
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('username', username);
         alert("Login successful!");
         window.location.href = "index.html"; 
     } else {
@@ -15,4 +17,14 @@ function validateLogin() {
     }
 
     return false;
+}
+
+function logout() {
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('username');
+    window.location.href = "index.html";
+}
+
+function checkLoginStatus() {
+    return localStorage.getItem('isLoggedIn') === 'true';
 }
