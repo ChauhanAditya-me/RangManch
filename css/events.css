@@ -4,9 +4,10 @@
     font-family: 'Poppins', sans-serif;
 }
 .about-header {
+    padding-top: 80px;
     height: 50vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(../img/aayam-3.jpg); 
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(../img/aayam-1.jpg); 
     background-position: center;
     background-size: cover;
     text-align: center;
@@ -21,9 +22,6 @@ nav {
     justify-content: space-between; 
     align-items: center;
     padding: 10px 20px;
-}
-nav img {
-    width: 150px;
 }
 .nav-links {
     display: flex; 

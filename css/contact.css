@@ -5,6 +5,7 @@
 }
 
 .about-header {
+    padding-top: 80px;
     height: 50vh;
     width: 100%;
     background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(../img/team-bg.jpg); 
@@ -13,6 +14,7 @@
     text-align: center;
     color: white;  
     position: relative;
+    margin-bottom: 50px;
 }
 .about-header h1 {
     margin-top: 30px;
@@ -22,9 +24,6 @@ nav {
     justify-content: space-between; 
     align-items: center;
     padding: 10px 20px;
-}
-nav img {
-    width: 150px;
 }
 .nav-links {
     display: flex; 
