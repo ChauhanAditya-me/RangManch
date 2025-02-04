@@ -132,6 +132,23 @@ p {
     text-align: left;
 }
 
+/* Progress Bars */
+.event-progress {
+    padding: 20px 0;
+}
+
+.progress {
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.progress-bar {
+    transition: width 1.5s ease;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 25px;
+}
+
 /* Footer */
 
 .footer {

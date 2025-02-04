@@ -96,13 +96,26 @@
                 
                 <!-- Contact FORM -->
                 
-                <form method="post" action="javascript:sendEmail()">
-                    
-                    <input type="text" id="Name" placeholder="Enter Your Name" required>
-                    <input type="email" id="Email" placeholder="Enter Your Email-id" required>
-                    <textarea rows="8" id="Message" placeholder="Your Message" required></textarea>
+                <form class="needs-validation" novalidate method="post" action="javascript:sendEmail()">
+                    <div class="mb-3">
+                        <input type="text" id="Name" class="form-control" placeholder="Enter Your Name" required>
+                        <div class="invalid-feedback">
+                            Please enter your name
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" id="Email" class="form-control" placeholder="Enter Your Email-id" required>
+                        <div class="invalid-feedback">
+                            Please enter a valid email address
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <textarea rows="8" id="Message" class="form-control" placeholder="Your Message" required></textarea>
+                        <div class="invalid-feedback">
+                            Please enter your message
+                        </div>
+                    </div>
                     <button type="submit" class="first-btn">Send Message</button>
-                    
                 </form>
             </div>
         </div>
@@ -112,6 +125,12 @@
     
         </section>
     </section>
+    
+    <!-- Toast for form submission feedback -->
+    <div class="custom-toast">
+        <i class="fa"></i>
+        <span class="toast-message"></span>
+    </div>
     
     <!-- Footer Code -->
     
