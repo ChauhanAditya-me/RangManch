@@ -2,8 +2,14 @@ function validateLogin() {
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
 
-    if (!username || !password) {
-        alert("Please fill in all fields.");
+    // Individual field validation
+    if (!username) {
+        alert("Please enter your username.");
+        return false;
+    }
+    
+    if (!password) {
+        alert("Please enter your password.");
         return false;
     }
 
