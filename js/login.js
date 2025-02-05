@@ -14,7 +14,7 @@ function validateLogin() {
         return false;
     }
 
-    if (username === "admin" && password === "password123") {
+    if (username === "admin" && password === "admin") {
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('username', username);
         localStorage.removeItem('returnUrl'); // Clear the stored URL
