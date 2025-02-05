@@ -1,6 +1,7 @@
 function validateLogin() {
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
+    const returnUrl = localStorage.getItem('returnUrl') || 'index.html';
 
     // Individual field validation
     if (!username) {
@@ -16,8 +17,9 @@ function validateLogin() {
     if (username === "admin" && password === "password123") {
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('username', username);
+        localStorage.removeItem('returnUrl'); // Clear the stored URL
         alert("Login successful!");
-        window.location.href = "index.html"; 
+        window.location.href = returnUrl;
     } else {
         alert("Invalid username or password!");
     }

@@ -56,7 +56,7 @@
                                 if (checkLoginStatus()) {
                                     container.innerHTML = '<a class="btn btn-danger ms-2" href="#" onclick="logout()">Logout</a>';
                                 } else {
-                                    container.innerHTML = '<a class="btn btn-success ms-2" href="login.html">Login</a>';
+                                    container.innerHTML = '<a class="btn btn-success ms-2" href="login.html" onclick="localStorage.setItem(\'returnUrl\', window.location.href)">Login</a>';
                                 }
                             });
                         </script>
