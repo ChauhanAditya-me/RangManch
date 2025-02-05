@@ -1,8 +1,21 @@
 $(document).ready(function() {
+    // Check if user is admin and show/hide form accordingly
+    const isAdmin = localStorage.getItem('username') === 'admin';
+    if (!isAdmin) {
+        $('#storyForm .form-group, #storyForm .button-group').hide();
+        $('#storyForm').prepend('<p class="admin-notice">Only administrators can add new stories.</p>');
+    }
+
     displayStories();
 
     $('#storyForm').on('submit', function(e) {
         e.preventDefault();
+        
+        // Check again if user is admin before submitting
+        if (!isAdmin) {
+            alert('Only administrators can add stories.');
+            return;
+        }
         
         const title = $('#storyTitle').val().trim();
         const author = $('#authorName').val().trim();
