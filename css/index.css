@@ -231,27 +231,55 @@ h3 {
 
 /*-- Members --*/
 
-.team h3 {
-    margin-top: 16px;
-    margin-left: 30px;
-    margin-bottom: 15px;
+.team-highlights {
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.team-highlights h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.team-highlights .row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.team {
+    flex: 0 1 300px;
+    margin: 0 20px;
     text-align: center;
 }
 
-.team-highlights {
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    padding-top: 50px;
-}
-.team-highlights img {
-    margin-left: 30px;
-    height: 200px;
+.team img {
     width: 200px;
-    padding: 5px;
+    height: 200px;
     border-radius: 50%;
-    border: solid black;
-    border-style: dashed;
+    border: 3px dashed #333;
+    padding: 5px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.team img:hover {
+    transform: scale(1.05);
+}
+
+.team h3 {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+.team h3 b {
+    display: block;
+    color: #07528b;
+    margin-bottom: 5px;
 }
 
 /* Projects Section */
